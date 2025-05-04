@@ -10,25 +10,25 @@ namespace LibraryData.Context
 {
     public class UnitOfWork
     {
-        Library1Entities db = new Library1Entities();
+        LibraryContext db = new LibraryContext();
 
-        private GenericRepositoryLibrary<Members> _memberRepository;
-        public GenericRepositoryLibrary<Members> MemberRepository
+        private GenericRepositoryLibrary<Member> _memberRepository;
+        public GenericRepositoryLibrary<Member> MemberRepository
         {
             get
             {
                 if (_memberRepository == null)
                 {
-                    _memberRepository = new GenericRepositoryLibrary<Members>(db);
+                    _memberRepository = new GenericRepositoryLibrary<Member>(db);
                 }
 
                 return _memberRepository;
             }
         }
         //****************************************************************
-        private GenericRepositoryLibrary<Users> _loginRepository;
+        private GenericRepositoryLibrary<User> _loginRepository;
 
-        public GenericRepositoryLibrary<Users> LoginRepository
+        public GenericRepositoryLibrary<User> LoginRepository
         {
             get
             {
@@ -42,33 +42,33 @@ namespace LibraryData.Context
         }
 
         //  ---------------------------------------------------------
-        private GenericRepositoryLibrary<Books> _bookRepository;
-        public GenericRepositoryLibrary<Books> BookRepository
-        {
-            get
-            {
-                if (_bookRepository == null)
-                {
-                    _bookRepository = new GenericRepositoryLibrary<Books>(db);
-                }
+        //private GenericRepositoryLibrary<Books> _bookRepository;
+        //public GenericRepositoryLibrary<Books> BookRepository
+        //{
+        //    get
+        //    {
+        //        if (_bookRepository == null)
+        //        {
+        //            _bookRepository = new GenericRepositoryLibrary<Books>(db);
+        //        }
 
-                return _bookRepository;
-            }
-        }
+        //        return _bookRepository;
+        //    }
+        //}
 
-        private GenericRepositoryLibrary<Borrow> _borrowRepository;
-        public GenericRepositoryLibrary<Borrow> BorrowRepository
-        {
-            get
-            {
-                if (_borrowRepository == null)
-                {
-                    _borrowRepository = new GenericRepositoryLibrary<Borrow>(db);
-                }
+        //private GenericRepositoryLibrary<Borrow> _borrowRepository;
+        //public GenericRepositoryLibrary<Borrow> BorrowRepository
+        //{
+        //    get
+        //    {
+        //        if (_borrowRepository == null)
+        //        {
+        //            _borrowRepository = new GenericRepositoryLibrary<Borrow>(db);
+        //        }
 
-                return _borrowRepository;
-            }
-        }
+        //        return _borrowRepository;
+        //    }
+        //}
 
 
 
